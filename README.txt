@@ -1,5 +1,6 @@
-Nepravidelná slovesa – PWA verze 11
-Nahrajte VŠECHNY soubory do kořene stejného veřejného GitHub repozitáře (Add file → Upload files → Commit changes).
-Aplikaci není třeba znovu instalovat. Při připojení k internetu použijte tlačítko Zkontrolovat aktualizaci.
-Přehled zadaných sloves je abecedně seřazen podle anglického základního tvaru.
-Pozor: aktualizace během rozpracovaného procvičování může přerušit aktuální relaci.
+Nepravidelná slovesa – PWA verze 13
+
+Obsah rozbaleného ZIP nahrajte do kořene repozitáře GitHub Pages.
+Verze 13: odstranění sloves, obnovení jednotlivých původních sloves a celého původního slovníku; záloha JSON zahrnuje i odstraněná slovesa.
+Původní uživatelská data z verze 12 se zachovávají ve stejném úložišti.
+Poznámka: odstraněná slovesa mohou zůstat v již rozpracovaném zadání do jeho dokončení.

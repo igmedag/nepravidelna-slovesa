@@ -1,4 +1,4 @@
-<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Nepravidelná anglická slovesa – mobilní verze 11</title><style>body{font-family:Arial,sans-serif;background:#f3f6fa;color:#183047;margin:0}main{max-width:1050px;margin:30px auto;padding:22px;background:white;border-radius:18px;box-shadow:0 5px 30px #1232}h1{margin-top:0}button{padding:12px 17px;margin:4px;border:0;border-radius:9px;background:#1766aa;color:white;font-weight:bold;cursor:pointer}button:disabled{background:#b8c3cd;cursor:not-allowed}input{font:inherit;padding:12px;border:2px solid #b8c9d8;border-radius:9px;box-sizing:border-box;min-width:0}#entry{margin:18px 0}#entry input{width:min(440px,100%)}.fields{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:20px 0}.cell{padding:12px;border-radius:12px;background:#eaf0f7;border:2px solid #cbd8e5;min-width:0}.cell label{display:block;font-size:13px;margin-bottom:8px}.cell input{width:100%;background:white}.cell.good{background:#b9efc8;border-color:#22964d}.cell.bad{background:#ffc9c9;border-color:#d43b3b}.cell.neutral{background:#eaf0f7}#status{font-weight:bold;min-height:30px}#progress{color:#506477}#stats{display:flex;gap:22px;flex-wrap:wrap;font-weight:bold;margin:10px 0 16px}.stat-good{color:#16803b}.stat-bad{color:#c62b35}.stat-percent{color:#183047}table{border-collapse:collapse;width:100%;margin-top:15px}th,td{border:1px solid #cad4dd;padding:10px;text-align:left}th{background:#dceaf6}.hidden{display:none!important}@media(max-width:650px){.fields{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}main{margin:8px;padding:13px}nav{display:flex;flex-wrap:wrap}nav button{flex:1 1 42%;margin:3px;padding:12px 7px}h1{font-size:1.45rem}.cell{padding:8px}.cell input{padding:10px 6px;font-size:16px}#nextAction,#entryNext{width:100%;min-height:52px;font-size:17px;margin:9px 0}table{font-size:12px}th,td{padding:6px;overflow-wrap:anywhere}}#randomPick{background:#087d72;width:100%;min-height:50px;margin:8px 0}#entryProgress{font-size:14px;color:#506477}button:focus-visible{outline:3px solid #e8a23b;outline-offset:2px}@media(max-width:650px){#randomPick{font-size:16px}} .update-panel{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:12px 0;padding:9px;background:#eef4fa;border-radius:10px}.update-panel button{background:#245b77;padding:10px}.update-panel span{font-size:14px}#updateInfo{color:#34516a}@media(max-width:650px){.update-panel button{flex:1 1 100%}} </style><meta name="theme-color" content="#1766aa"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Slovesa"><link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" href="./icon-192.png"></head><body><main><h1>Nepravidelná anglická slovesa</h1><p>Učení a testování · ovládání dotykem i klávesou Enter</p><nav><button id="new">Nové zadání</button><button id="show" disabled>Zobrazení zadání</button><button id="learn" disabled>Učení</button><button id="test" disabled>Testování</button><button id="stopEntry" class="hidden">Ukončit zadávání</button><button id="confirm" class="hidden">Potvrdit zadání</button><button id="stop" class="hidden">Konec učení</button></nav><div class="update-panel"><span id="versionLabel">Verze 11</span><button id="checkUpdate" type="button">Zkontrolovat aktualizaci</button><span id="updateInfo" role="status" aria-live="polite"></span></div><section id="entry" class="hidden"><p id="entryLabel"></p><input id="entryInput" autocomplete="off" spellcheck="false" placeholder="Zadejte počet sloves"><button id="entryNext" class="hidden" type="button">Potvrdit zadání</button><button id="randomPick" class="hidden" type="button">🎲 Náhodný výběr – doplnit do počtu</button><p id="entryProgress" aria-live="polite"></p></section><p id="status">Klikněte na Nové zadání.</p><p id="progress"></p><div id="stats" class="hidden" aria-live="polite"></div><section id="exercise" class="hidden"><div class="fields" id="fields"></div><p id="hint">Doplňte prázdná pole.</p><button id="nextAction" class="hidden" type="button">Potvrdit odpověď</button></section><section id="tableArea" class="hidden"></section></main><script>
+<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Nepravidelná anglická slovesa – mobilní verze 13</title><style>body{font-family:Arial,sans-serif;background:#f3f6fa;color:#183047;margin:0}main{max-width:1050px;margin:30px auto;padding:22px;background:white;border-radius:18px;box-shadow:0 5px 30px #1232}h1{margin-top:0}button{padding:12px 17px;margin:4px;border:0;border-radius:9px;background:#1766aa;color:white;font-weight:bold;cursor:pointer}button:disabled{background:#b8c3cd;cursor:not-allowed}input{font:inherit;padding:12px;border:2px solid #b8c9d8;border-radius:9px;box-sizing:border-box;min-width:0}#entry{margin:18px 0}#entry input{width:min(440px,100%)}.fields{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:20px 0}.cell{padding:12px;border-radius:12px;background:#eaf0f7;border:2px solid #cbd8e5;min-width:0}.cell label{display:block;font-size:13px;margin-bottom:8px}.cell input{width:100%;background:white}.cell.good{background:#b9efc8;border-color:#22964d}.cell.bad{background:#ffc9c9;border-color:#d43b3b}.cell.neutral{background:#eaf0f7}#status{font-weight:bold;min-height:30px}#progress{color:#506477}#stats{display:flex;gap:22px;flex-wrap:wrap;font-weight:bold;margin:10px 0 16px}.stat-good{color:#16803b}.stat-bad{color:#c62b35}.stat-percent{color:#183047}table{border-collapse:collapse;width:100%;margin-top:15px}th,td{border:1px solid #cad4dd;padding:10px;text-align:left}th{background:#dceaf6}.hidden{display:none!important}@media(max-width:650px){.fields{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}main{margin:8px;padding:13px}nav{display:flex;flex-wrap:wrap}nav button{flex:1 1 42%;margin:3px;padding:12px 7px}h1{font-size:1.45rem}.cell{padding:8px}.cell input{padding:10px 6px;font-size:16px}#nextAction,#entryNext{width:100%;min-height:52px;font-size:17px;margin:9px 0}table{font-size:12px}th,td{padding:6px;overflow-wrap:anywhere}}#randomPick{background:#087d72;width:100%;min-height:50px;margin:8px 0}#entryProgress{font-size:14px;color:#506477}button:focus-visible{outline:3px solid #e8a23b;outline-offset:2px}@media(max-width:650px){#randomPick{font-size:16px}} .update-panel{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:12px 0;padding:9px;background:#eef4fa;border-radius:10px}.update-panel button{background:#245b77;padding:10px}.update-panel span{font-size:14px}#updateInfo{color:#34516a}.update-panel.compact{padding:3px 0;margin:2px 0;background:transparent;opacity:.7}.update-panel.compact button{font-size:11px;padding:5px 7px;margin:0;background:#667b8a}.update-panel.compact span{font-size:11px}.update-panel.hidden{display:none!important}#dictionaryArea{margin-top:15px}#dictionaryArea label{display:block;margin:9px 0;font-weight:bold}#dictionaryArea label input{display:block;width:100%;margin-top:4px}#dictionarySearch{width:100%}#dictionaryList{max-height:210px;overflow:auto;border:1px solid #cbd8e5;border-radius:8px;margin:10px 0}.dictRow{display:flex;justify-content:space-between;align-items:center;padding:4px 8px;border-bottom:1px solid #ddd}.dictRow button{padding:7px 10px;margin:2px}.formActions{display:flex;flex-wrap:wrap}.backup{margin-top:16px;border-top:1px solid #ddd;padding-top:10px}.fileButton{display:inline-block!important;background:#1766aa;color:white;padding:12px;border-radius:9px;cursor:pointer}.fileButton input{display:none!important}.small{font-size:12px;color:#526478}#unknownVerb button{background:#087d72}.danger{background:#a32938!important}.muted{background:#657887!important}.dictRow .restore{background:#26734c}.dictionaryDanger{margin-top:12px;padding-top:10px;border-top:1px solid #ddd}#tableArea .tableTools{margin:10px 0}@media(max-width:650px){.update-panel button{flex:1 1 100%}} </style><meta name="theme-color" content="#1766aa"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Slovesa"><link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" href="./icon-192.png"></head><body><main><h1>Nepravidelná anglická slovesa</h1><p>Učení a testování · ovládání dotykem i klávesou Enter</p><nav><button id="new">Nové zadání</button><button id="show" disabled>Zobrazení zadání</button><button id="learn" disabled>Učení</button><button id="test" disabled>Testování</button><button id="manage" type="button">Správa slovníku</button><button id="stopEntry" class="hidden">Ukončit zadávání</button><button id="confirm" class="hidden">Potvrdit zadání</button><button id="stop" class="hidden">Konec učení</button></nav><div class="update-panel" id="updatePanel"><span id="versionLabel">Verze 13</span><button id="checkUpdate" type="button">Zkontrolovat aktualizaci</button><span id="updateInfo" role="status" aria-live="polite"></span></div><section id="entry" class="hidden"><p id="entryLabel"></p><input id="entryInput" autocomplete="off" spellcheck="false" placeholder="Zadejte počet sloves"><button id="entryNext" class="hidden" type="button">Potvrdit zadání</button><button id="randomPick" class="hidden" type="button">🎲 Náhodný výběr – doplnit do počtu</button><p id="entryProgress" aria-live="polite"></p></section><p id="status">Klikněte na Nové zadání.</p><p id="progress"></p><div id="stats" class="hidden" aria-live="polite"></div><section id="exercise" class="hidden"><div class="fields" id="fields"></div><p id="hint">Doplňte prázdná pole.</p><button id="nextAction" class="hidden" type="button">Potvrdit odpověď</button></section><section id="tableArea" class="hidden"></section><section id="dictionaryArea" class="hidden"><h2>Správa slovníku</h2><p id="dictionaryCount"></p><label for="dictionarySearch">Vyhledat sloveso</label><input id="dictionarySearch" placeholder="Například get" autocomplete="off"><div id="dictionaryList"></div><h3 id="editTitle">Přidat nové sloveso</h3><form id="verbForm"><label>Český význam<input id="verbCz" required></label><label>Základní tvar<input id="verbBase" required autocomplete="off"></label><label>2. tvar<input id="verbPast" required></label><label>3. tvar<input id="verbPart" required></label><div class="formActions"><button type="submit">Uložit sloveso</button><button type="button" id="clearVerb">Nové sloveso</button><button type="button" class="danger hidden" id="deleteVerb">Smazat sloveso</button><button type="button" id="backDictionary">Zpět</button></div></form><p id="dictionaryMessage" role="status"></p><div class="dictionaryDanger"><h3>Obnovení slovníku</h3><p class="small">Odstraněná původní slovesa lze jednotlivě obnovit. Obnovení celého původního slovníku vrátí výchozí záznamy a jejich překlady, ale ponechá vaše vlastní přidaná slovesa.</p><label><input type="checkbox" id="showDeleted"> Zobrazit také odstraněná původní slovesa</label><div class="formActions"><button type="button" id="restoreOriginal" class="muted">Obnovit celý původní slovník</button></div></div><div class="backup"><button type="button" id="exportDictionary">Export slovníku (JSON)</button><label class="fileButton">Import slovníku (JSON)<input type="file" id="importDictionary" accept=".json,application/json"></label><p class="small">Vlastní úpravy jsou uložené pouze v tomto prohlížeči. Export slouží jako záloha i pro přenos na jiné zařízení.</p></div></section><section id="unknownVerb" class="hidden"><button type="button" id="addUnknown">+ Doplnit nové sloveso</button></section></main><script>
 const raw=`be|být|was/were|been
 become|stát se|became|become
 begin|začít|began|begun
@@ -68,17 +68,147 @@ understand|rozumět|understood|understood
 wake|probudit se|woke|woken
 wear|nosit (oblečení)|wore|worn
 win|vyhrát|won|won
-write|psát|wrote|written`;
-const dictionary=Object.fromEntries(raw.split('\n').map(s=>{let [base,cz,past,part]=s.split('|');return [base,{base,forms:[cz,base,past,part]}]}));
+write|psát|wrote|written
+abide|dodržovat|abode/abided|abode/abided
+arise|vzniknout|arose|arisen
+awake|probudit se|awoke|awoken
+bear|nést, snášet|bore|borne/born
+beat|bít, porazit|beat|beaten
+bend|ohnout|bent|bent
+bet|vsadit se|bet|bet
+bid|nabídnout cenu|bid|bid
+bind|svázat|bound|bound
+bite|kousnout|bit|bitten
+bleed|krvácet|bled|bled
+blow|foukat|blew|blown
+breed|chovat, rozmnožovat|bred|bred
+broadcast|vysílat|broadcast|broadcast
+burn|hořet, spálit|burnt/burned|burnt/burned
+burst|prasknout|burst|burst
+cast|vrhnout, obsadit roli|cast|cast
+cling|lpět, držet se|clung|clung
+creep|plížit se|crept|crept
+deal|jednat, rozdávat|dealt|dealt
+dig|kopat|dug|dug
+dive|potápět se|dived/dove|dived
+dream|snít|dreamt/dreamed|dreamt/dreamed
+dwell|přebývat|dwelt/dwelled|dwelt/dwelled
+feed|krmit|fed|fed
+fight|bojovat|fought|fought
+flee|uprchnout|fled|fled
+fling|mrštit|flung|flung
+forbid|zakázat|forbade|forbidden
+forecast|předpovědět|forecast|forecast
+foresee|předvídat|foresaw|foreseen
+forgive|odpustit|forgave|forgiven
+forsake|opustit, zříci se|forsook|forsaken
+freeze|zmrznout|froze|frozen
+grind|mlít|ground|ground
+grow|růst|grew|grown
+hang|viset, pověsit|hung|hung
+kneel|klečet|knelt/kneeled|knelt/kneeled
+knit|plést|knit/knitted|knit/knitted
+lay|položit|laid|laid
+lead|vést|led|led
+lean|naklánět se|leant/leaned|leant/leaned
+leap|skočit|leapt/leaped|leapt/leaped
+lie|ležet|lay|lain
+light|zapálit, rozsvítit|lit/lighted|lit/lighted
+mean|znamenat|meant|meant
+mislead|uvést v omyl|misled|misled
+mistake|splést si|mistook|mistaken
+overcome|překonat|overcame|overcome
+overdo|přehnat|overdid|overdone
+overeat|přejídat se|overate|overeaten
+overhear|zaslechnout|overheard|overheard
+overtake|předjet|overtook|overtaken
+overthrow|svrhnout|overthrew|overthrown
+prove|dokázat|proved|proven/proved
+quit|přestat, skončit|quit|quit
+rebuild|přestavět|rebuilt|rebuilt
+redo|udělat znovu|redid|redone
+remake|předělat|remade|remade
+repay|splatit|repaid|repaid
+reset|znovu nastavit|reset|reset
+retell|převyprávět|retold|retold
+rewrite|přepsat|rewrote|rewritten
+rid|zbavit|rid|rid
+rise|stoupat|rose|risen
+seek|hledat|sought|sought
+shake|třást|shook|shaken
+shed|shodit, prolévat|shed|shed
+shine|zářit|shone/shined|shone/shined
+shoot|střílet|shot|shot
+shrink|smrštit se|shrank/shrunk|shrunk
+shut|zavřít|shut|shut
+sink|potopit se|sank|sunk
+slide|klouzat|slid|slid
+sling|hodit, zavěsit|slung|slung
+smell|vonět, cítit|smelt/smelled|smelt/smelled
+sow|zasít|sowed|sown/sowed
+speed|spěchat, zrychlit|sped/speeded|sped/speeded
+spell|hláskovat|spelt/spelled|spelt/spelled
+spill|rozlít|spilt/spilled|spilt/spilled
+spin|točit|spun|spun
+spit|plivat|spat/spit|spat/spit
+split|rozdělit|split|split
+spoil|zkazit|spoilt/spoiled|spoilt/spoiled
+spread|rozšířit|spread|spread
+spring|vyskočit, vytrysknout|sprang/sprung|sprung
+stick|přilepit, uvíznout|stuck|stuck
+sting|bodnout, štípnout|stung|stung
+stink|páchnout|stank/stunk|stunk
+stride|kráčet|strode|stridden
+strike|udeřit, stávkovat|struck|struck
+string|navléknout|strung|strung
+strive|usilovat|strove/strived|striven/strived
+swear|přísahat, nadávat|swore|sworn
+sweep|zametat|swept|swept
+swell|otékat, bobtnat|swelled|swollen/swelled
+swing|houpat se|swung|swung
+tear|trhat|tore|torn
+thrust|strčit, vrazit|thrust|thrust
+tread|šlapat|trod|trodden/trod
+undergo|podstoupit|underwent|undergone
+undertake|ujmout se, podniknout|undertook|undertaken
+undo|vrátit zpět|undid|undone
+uphold|podporovat, zachovat|upheld|upheld
+upset|rozrušit, převrátit|upset|upset
+weave|tkát|wove|woven
+weep|plakat|wept|wept
+wet|namočit|wet/wetted|wet/wetted
+wind|vinout, navíjet|wound|wound
+withdraw|stáhnout, vybrat|withdrew|withdrawn
+withstand|odolat|withstood|withstood
+wring|ždímat|wrung|wrung
+behold|spatřit|beheld|beheld
+forgo|obejít se bez|forwent|forgone
+input|vložit data|input/inputted|input/inputted
+interweave|proplétat|interwove|interwoven
+outdo|překonat|outdid|outdone
+outgrow|vyrůst z něčeho|outgrew|outgrown
+outrun|předběhnout|outran|outrun
+oversleep|zaspat|overslept|overslept
+partake|účastnit se, požít|partook|partaken
+saw|řezat pilou|sawed|sawn/sawed
+sew|šít|sewed|sewn/sewed
+shave|holit|shaved|shaven/shaved
+shear|stříhat (ovce)|sheared|shorn/sheared
+slay|zabít|slew|slain
+sneak|plížit se|snuck/sneaked|snuck/sneaked
+strew|rozházet|strewed|strewn/strewed
+unfreeze|rozmrazit|unfroze|unfrozen
+unwind|odvinout, uvolnit se|unwound|unwound`;
+let dictionary=Object.fromEntries(raw.split('\n').map(s=>{let [base,cz,past,part]=s.split('|');return [base,{base,forms:[cz,base,past,part]}]}));
 const $=id=>document.getElementById(id);let sessions={learn:null,test:null},visibleTab=null;let selected=[],draft=[],limit=null,mode=null,queue=[],streak={},current=null,phase='idle',missing=[],values=[],correctCount=0,wrongCount=0;
 function status(t){$('status').textContent=t}function buttons(){let ok=selected.length>0;$('show').disabled=!ok;$('learn').disabled=!ok;$('test').disabled=!ok}
-function resetView(){$('exercise').classList.add('hidden');$('tableArea').classList.add('hidden');$('entry').classList.add('hidden');$('stop').classList.add('hidden');$('stopEntry').classList.add('hidden');$('confirm').classList.add('hidden');$('entryNext').classList.add('hidden');$('nextAction').classList.add('hidden');$('randomPick').classList.add('hidden')}
-function beginEntry(){sessions={learn:null,test:null};visibleTab=null;mode=null;window.speechSynthesis?.cancel();selected=[];draft=[];limit=null;buttons();resetView();$('stats').classList.add('hidden');$('entry').classList.remove('hidden');$('entryNext').classList.remove('hidden');$('stopEntry').classList.remove('hidden');$('entryLabel').textContent='Kolik sloves chcete zadat?';$('entryInput').placeholder='Počet sloves';$('entryInput').value='';$('entryProgress').textContent='';status('Zadejte počet a potvrďte tlačítkem nebo Enterem.');$('progress').textContent='';$('entryInput').focus()}
-function entrySubmit(){let value=$('entryInput').value.trim().toLowerCase();if(limit===null){let n=Number(value);if(!Number.isInteger(n)||n<1||n>Object.keys(dictionary).length){status('Zadejte celé číslo od 1 do '+Object.keys(dictionary).length+'.');return}limit=n;status('Zadávejte anglické infinitivy.');}else{if(!dictionary[value]){status('Sloveso „'+value+'“ není ve slovníku. Zkuste jiné nebo požádejte o rozšíření slovníku.');return}if(draft.some(v=>v.base===value)){status('Toto sloveso už je zadané.');return}draft.push(dictionary[value]);status('Přidáno: '+value+'.');} $('entryInput').value='';updateEntry()}
+function resetView(){$('dictionaryArea').classList.add('hidden');$('unknownVerb').classList.add('hidden');$('exercise').classList.add('hidden');$('tableArea').classList.add('hidden');$('entry').classList.add('hidden');$('stop').classList.add('hidden');$('stopEntry').classList.add('hidden');$('confirm').classList.add('hidden');$('entryNext').classList.add('hidden');$('nextAction').classList.add('hidden');$('randomPick').classList.add('hidden')}
+function beginEntry(){updatePanel('entry');$('dictionaryArea').classList.add('hidden');sessions={learn:null,test:null};visibleTab=null;mode=null;window.speechSynthesis?.cancel();selected=[];draft=[];limit=null;buttons();resetView();$('stats').classList.add('hidden');$('entry').classList.remove('hidden');$('entryNext').classList.remove('hidden');$('stopEntry').classList.remove('hidden');$('entryLabel').textContent='Kolik sloves chcete zadat?';$('entryInput').placeholder='Počet sloves';$('entryInput').value='';$('entryProgress').textContent='';status('Zadejte počet a potvrďte tlačítkem nebo Enterem.');$('progress').textContent='';$('entryInput').focus()}
+function entrySubmit(){let value=$('entryInput').value.trim().toLowerCase();if(limit===null){let n=Number(value);if(!Number.isInteger(n)||n<1||n>Object.keys(dictionary).length){status('Zadejte celé číslo od 1 do '+Object.keys(dictionary).length+'.');return}limit=n;status('Zadávejte anglické infinitivy.');}else{if(!dictionary[value]){unknownBase=value;$('unknownVerb').classList.remove('hidden');status('Sloveso „'+value+'“ není ve slovníku. Zkuste jiné nebo klikněte pro doplnění.');return}if(draft.some(v=>v.base===value)){status('Toto sloveso už je zadané.');return}draft.push(dictionary[value]);$('unknownVerb').classList.add('hidden');status('Přidáno: '+value+'.');} $('entryInput').value='';updateEntry()}
 function updateEntry(){if(limit===null)return;$('entryLabel').textContent='Sloveso '+Math.min(draft.length+1,limit)+' z '+limit+' (anglický základní tvar):';$('entryProgress').textContent='Vybráno '+draft.length+' z '+limit+' sloves. Náhodně lze doplnit '+(limit-draft.length)+'.';$('randomPick').classList.toggle('hidden',draft.length>=limit);$('entryInput').placeholder='Například go, write, be';if(draft.length>=limit){$('entry').classList.add('hidden');$('entryNext').classList.add('hidden');$('stopEntry').classList.add('hidden');$('randomPick').classList.add('hidden');$('confirm').classList.remove('hidden');status('Zadáno '+draft.length+' sloves. Potvrďte zadání.')}else $('entryInput').focus()}
 function randomSelection(){if(limit===null){status('Nejprve zadejte požadovaný počet sloves.');return}let remaining=limit-draft.length;if(remaining<=0)return;let used=new Set(draft.map(v=>v.base));let available=shuffle(Object.values(dictionary).filter(v=>!used.has(v.base)));if(available.length<remaining){status('Ve slovníku není dostatek dalších sloves.');return}draft.push(...available.slice(0,remaining));updateEntry();status('Náhodně doplněno '+remaining+' sloves. Celkem '+draft.length+'. Potvrďte zadání.')}
-function finishEntry(){if(!draft.length){status('Nejprve zadejte alespoň jedno sloveso.');return}selected=[...draft];resetView();buttons();status('Zadání potvrzeno: '+selected.length+' sloves. Vyberte Zobrazení zadání, Učení nebo Testování.')}
-function showTable(){saveSession();visibleTab="show";mode=null;window.speechSynthesis?.cancel();resetView();$('stats').classList.add('hidden');$('progress').textContent='';$('tableArea').classList.remove('hidden');let t=document.createElement('table'),head=document.createElement('tr');['Český význam','Základní tvar','2. tvar','3. tvar'].forEach(x=>{let th=document.createElement('th');th.textContent=x;head.append(th)});t.append(head);[...selected].sort((a,b)=>a.base.localeCompare(b.base,'en')).forEach(v=>{let tr=document.createElement('tr');v.forms.forEach(x=>{let td=document.createElement('td');td.textContent=x;tr.append(td)});t.append(tr)});$('tableArea').replaceChildren(t);status('Přehled zadaných sloves.')}
+function finishEntry(){updatePanel('idle');if(!draft.length){status('Nejprve zadejte alespoň jedno sloveso.');return}selected=[...draft];resetView();buttons();status('Zadání potvrzeno: '+selected.length+' sloves. Vyberte Zobrazení zadání, Učení nebo Testování.')}
+function showTable(){updatePanel('show');saveSession();visibleTab="show";mode=null;window.speechSynthesis?.cancel();resetView();$('stats').classList.add('hidden');$('progress').textContent='';$('tableArea').classList.remove('hidden');let t=document.createElement('table'),head=document.createElement('tr');['Český význam','Základní tvar','2. tvar','3. tvar'].forEach(x=>{let th=document.createElement('th');th.textContent=x;head.append(th)});t.append(head);[...selected].sort((a,b)=>a.base.localeCompare(b.base,'en')).forEach(v=>{let tr=document.createElement('tr');v.forms.forEach(x=>{let td=document.createElement('td');td.textContent=x;tr.append(td)});t.append(tr)});$('tableArea').replaceChildren(t);status('Přehled zadaných sloves.')}
 function shuffle(a){for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function taskKey(t){return t.v.base+':'+t.index}
 function allTasks(){return selected.flatMap(v=>(mode==='learn'?[0,1,2,3]:[-1]).map(index=>({v,index})))}
@@ -91,7 +221,7 @@ function saveSession(){
 function start(which){
  unlockAudio();window.speechSynthesis?.cancel();
  if(visibleTab===which&&mode===which)return;
- saveSession();visibleTab=which;mode=which;resetView();
+ saveSession();visibleTab=which;mode=which;resetView();updatePanel('exercise');
  $('exercise').classList.remove('hidden');$('nextAction').classList.remove('hidden');$('stop').classList.remove('hidden');$('stats').classList.remove('hidden');
  $('stop').textContent=which==='learn'?'Konec učení':'Konec testování';
  const saved=sessions[which];
@@ -116,7 +246,7 @@ function evaluation(pct,total){
  return 'Zatím se nedařilo správně odpovídat na většinu otázek. Je potřeba vrátit se k učení základních tvarů a procvičovat menší počet sloves. Nevzdávejte to – postupné opakování přináší výsledky.';
 }
 function fanfare(){try{unlockAudio();if(!audioContext)return;const ctx=audioContext;const play=()=>{let start=ctx.currentTime+.04;[[523.25,0,.16],[659.25,.17,.16],[783.99,.34,.18],[1046.5,.54,.48]].forEach(([freq,offset,dur])=>{let o=ctx.createOscillator(),g=ctx.createGain();o.type='triangle';o.frequency.setValueAtTime(freq,start+offset);g.gain.setValueAtTime(.0001,start+offset);g.gain.linearRampToValueAtTime(.16,start+offset+.025);g.gain.setValueAtTime(.16,start+offset+dur*.65);g.gain.exponentialRampToValueAtTime(.0001,start+offset+dur);o.connect(g);g.connect(ctx.destination);o.start(start+offset);o.stop(start+offset+dur+.02)})};if(ctx.state==='running')play();else ctx.resume().then(play).catch(()=>{})}catch(e){console.warn('Fanfára není dostupná',e)}}
-function endSession(interrupted){if(!interrupted)fanfare();let was=mode;sessions[was]=null;visibleTab=null;mode=null;phase='idle';window.speechSynthesis?.cancel();resetView();buttons();updateStats();let total=correctCount+wrongCount,pct=total?Math.round(100*correctCount/total):0;let label=was==='learn'?'Učení':'Testování';status((interrupted?label+' přerušeno. ':label+' dokončeno! ')+ 'Celková úspěšnost: '+pct+' % ('+correctCount+' správně, '+wrongCount+' chybně). '+evaluation(pct,total)+(interrupted?' Při dalším spuštění začnete od začátku.':''));$('progress').textContent=interrupted?'Procvičování bylo přerušeno.':'Všechny otázky zvládnuty.'}
+function endSession(interrupted){updatePanel('idle');if(!interrupted)fanfare();let was=mode;sessions[was]=null;visibleTab=null;mode=null;phase='idle';window.speechSynthesis?.cancel();resetView();buttons();updateStats();let total=correctCount+wrongCount,pct=total?Math.round(100*correctCount/total):0;let label=was==='learn'?'Učení':'Testování';status((interrupted?label+' přerušeno. ':label+' dokončeno! ')+ 'Celková úspěšnost: '+pct+' % ('+correctCount+' správně, '+wrongCount+' chybně). '+evaluation(pct,total)+(interrupted?' Při dalším spuštění začnete od začátku.':''));$('progress').textContent=interrupted?'Procvičování bylo přerušeno.':'Všechny otázky zvládnuty.'}
 
 function next(){if(!mode)return;queue=queue.filter(t=>streak[taskKey(t)]<2);if(!queue.length){if(pendingCount()===0){endSession(false);return}queue=shuffle(allTasks().filter(t=>streak[taskKey(t)]<2))}current=queue.shift();phase='answer';let shown=mode==='learn'?current.index:Math.floor(Math.random()*4);missing=mode==='learn'?[shown]:[0,1,2,3].filter(i=>i!==shown);values=[...current.v.forms];let f=$('fields');f.replaceChildren();['Český význam','Základní tvar','2. tvar','3. tvar'].forEach((label,i)=>{let cell=document.createElement('div');cell.className='cell neutral';cell.id='cell'+i;let l=document.createElement('label');l.textContent=label;let input=document.createElement('input');input.id='field'+i;input.autocomplete='off';input.spellcheck=false;if(missing.includes(i)){input.value='';input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();e.stopPropagation();advance()}})}else{input.value=values[i];input.readOnly=true}cell.append(l,input);f.append(cell)});status((mode==='learn'?'Učení':'Testování')+' – doplňte '+(missing.length===1?'chybějící tvar.':'chybějící tvary.'));updateStats();$('hint').textContent='Vyplňte odpověď a potvrďte tlačítkem nebo Enterem.';updateAction();focusMissing()}
 function focusMissing(){let i=missing.find(i=>!$('field'+i).dataset.done);if(i!==undefined)$('field'+i).focus()}
@@ -158,9 +288,75 @@ function speak(){if(!('speechSynthesis'in window))return;let synth=window.speech
 function updateAction(){const b=$('nextAction');if(!mode){b.classList.add('hidden');return}b.classList.remove('hidden');b.textContent=phase==='result-bad'?'Zobrazit správné tvary':phase==='correction'||phase==='result-ok'?'Další sloveso':'Potvrdit odpověď'}
 function advance(){if(!mode)return;if(phase==='answer'){let index=missing.find(i=>!$('field'+i).dataset.done);if(index===undefined)return;let inp=$('field'+index);if(!inp.value.trim()){inp.focus();return}inp.dataset.done='1';let nextIndex=missing.find(i=>!$('field'+i).dataset.done);if(nextIndex!==undefined){$('field'+nextIndex).focus();return}let right=missing.map(i=>correct($('field'+i).value,values[i]));let all=right.every(Boolean);missing.forEach((i,k)=>$('cell'+i).className='cell '+(right[k]?'good':'bad'));if(mode==='learn'){for(let i=0;i<4;i++)$('cell'+i).className='cell '+(all?'good':'bad')}else{for(let i=0;i<4;i++)if(!missing.includes(i))$('cell'+i).className='cell good'}let key=taskKey(current);if(all){correctCount++;streak[key]++;enqueue(current,false);phase='result-ok';status('Správně! Pokračujte tlačítkem Další sloveso.');speak()}else{wrongCount++;streak[key]=0;enqueue(current,true);phase='result-bad';status('Chyba. Tlačítkem zobrazíte správné tvary.');beep()}updateStats();updateAction();document.activeElement.blur();$('hint').textContent=all?'Správně. Výsledek zůstává zobrazený až do pokračování.':'Chybné odpovědi jsou červeně, správné zeleně. Tlačítkem zobrazíte opravu.';}else if(phase==='result-bad'){for(let i=0;i<4;i++){$('field'+i).value=values[i];$('cell'+i).className='cell neutral'}phase='correction';$('hint').textContent='Správné tvary zůstávají zobrazené až do stisknutí tlačítka Další sloveso.';status('Správné tvary. Poslechněte si výslovnost a pokračujte tlačítkem Další sloveso.');updateAction();speak()}else if(phase==='result-ok'||phase==='correction')next()}
 function stop(){if(mode)endSession(true)}
-document.addEventListener('pointerdown',unlockAudio,{passive:true});document.addEventListener('keydown',unlockAudio);$('new').onclick=beginEntry;$('entryNext').onclick=entrySubmit;$('randomPick').onclick=randomSelection;$('nextAction').onclick=()=>{unlockAudio();advance()};$('entryInput').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();entrySubmit()}});$('stopEntry').onclick=()=>{if(draft.length){$('confirm').classList.remove('hidden');$('entry').classList.add('hidden');$('entryNext').classList.add('hidden');$('stopEntry').classList.add('hidden');status('Zadávání ukončeno. Potvrďte '+draft.length+' zadaných sloves.')}else{resetView();status('Zadávání ukončeno bez sloves.')}};$('confirm').onclick=finishEntry;$('show').onclick=showTable;$('learn').onclick=()=>start('learn');$('test').onclick=()=>start('test');$('stop').onclick=stop;document.addEventListener('keydown',e=>{if(e.key==='Enter'&&mode&&visibleTab===mode&&phase!=='answer'){e.preventDefault();advance()}});
+
+// User dictionary overlay: changes survive updates at the same origin.
+const STORE_KEY='irregular-verbs-custom-v12'; // Zachovat klíč kvůli datům z verze 12.
+const originalDictionary=JSON.parse(JSON.stringify(dictionary));
+let unknownBase='',returnTab='idle',editingBase=null,entryBeforeEditor=false;
+function updatePanel(where){const p=$('updatePanel');p.classList.toggle('hidden',where==='exercise');p.classList.toggle('compact',where==='entry'||where==='show'||where==='dictionary');}
+function normalizeBase(s){return s.trim().toLowerCase().replace(/\s+/g,' ')}
+function restoreCustom(){try{let data=JSON.parse(localStorage.getItem(STORE_KEY)||'{}');if(!data||typeof data!=='object'||Array.isArray(data))return;for(const [key,forms] of Object.entries(data)){const base=normalizeBase(key);if(!base)continue;if(forms===null){delete dictionary[base];continue}if(!Array.isArray(forms)||forms.length!==4||forms.some(x=>typeof x!=='string'||!x.trim())||base!==normalizeBase(forms[1]))continue;dictionary[base]={base,forms:[...forms]};}}catch(e){console.warn('Slovník nelze načíst',e)}}
+function persistCustom(){const changes={};for(const [base,v] of Object.entries(dictionary)){if(!originalDictionary[base]||JSON.stringify(v.forms)!==JSON.stringify(originalDictionary[base].forms))changes[base]=v.forms;}for(const base of Object.keys(originalDictionary))if(!dictionary[base])changes[base]=null;try{localStorage.setItem(STORE_KEY,JSON.stringify(changes));return true}catch(e){alert('Změny se nepodařilo uložit. Zkontrolujte volné místo a nastavení úložiště.');return false}}
+function syncSelected(base){for(const v of [...selected,...draft])if(v.base===base)v.forms=[...dictionary[base].forms];for(const s of Object.values(sessions))if(s&&s.current?.v.base===base)s.current.v.forms=[...dictionary[base].forms];if(current?.v.base===base)current.v.forms=[...dictionary[base].forms]}
+function openDictionary(from){
+ if(mode)saveSession();returnTab=from||'idle';entryBeforeEditor=returnTab==='entry';
+ visibleTab='dictionary';mode=null;window.speechSynthesis?.cancel();resetView();updatePanel('dictionary');$('dictionaryArea').classList.remove('hidden');$('stats').classList.add('hidden');$('progress').textContent='';$('dictionaryMessage').textContent='';renderDictionary();
+ status('Správa slovníku. Změny se ukládají do tohoto zařízení. Pokud upravíte právě procvičované sloveso, změna se projeví od další otázky.');
+}
+function renderDictionary(){
+ let q=normalizeBase($('dictionarySearch').value),showDeleted=$('showDeleted').checked;
+ let list=$('dictionaryList');list.replaceChildren();
+ let keys=Object.keys(dictionary).sort((a,b)=>a.localeCompare(b,'en'));
+ let deleted=Object.keys(originalDictionary).filter(base=>!dictionary[base]).sort((a,b)=>a.localeCompare(b,'en'));
+ $('dictionaryCount').textContent='Ve slovníku je '+keys.length+' sloves. Skryto původních: '+deleted.length+'.';
+ let items=keys.map(base=>({base,deleted:false}));
+ if(showDeleted)items.push(...deleted.map(base=>({base,deleted:true})));
+ items.sort((a,b)=>a.base.localeCompare(b.base,'en'));
+ for(const {base,deleted:removed} of items.filter(x=>x.base.includes(q)).slice(0,100)){
+  let row=document.createElement('div');row.className='dictRow';
+  let txt=document.createElement('span');txt.textContent=base+' – '+(removed?originalDictionary[base]:dictionary[base]).forms[0]+(removed?' (odstraněno)':'');
+  let btn=document.createElement('button');btn.type='button';btn.textContent=removed?'Obnovit':'Upravit';
+  if(removed){btn.className='restore';btn.onclick=()=>restoreVerb(base)}else btn.onclick=()=>editVerb(base);
+  row.append(txt,btn);list.append(row);
+ }
+}
+function restoreVerb(base){
+ if(!originalDictionary[base]||dictionary[base])return;
+ let previous={...dictionary};dictionary[base]=JSON.parse(JSON.stringify(originalDictionary[base]));
+ if(!persistCustom()){dictionary=previous;return}
+ syncSelected(base);renderDictionary();$('dictionaryMessage').textContent='Původní sloveso „'+base+'“ bylo obnoveno.';
+ if(editingBase===base)editVerb(base);
+}
+function deleteVerb(){
+ const base=editingBase;if(!base||!dictionary[base])return;
+ const builtin=!!originalDictionary[base];
+ const msg=builtin?'Odstranit sloveso „'+base+'“ z osobního slovníku? Původní záznam bude možné kdykoliv obnovit.':'Trvale odstranit vlastní sloveso „'+base+'“ z osobního slovníku?';
+ if(!confirm(msg+'\n\nJiž rozpracované zadání a procvičování zůstane zachováno.'))return;
+ const previous={...dictionary};delete dictionary[base];
+ if(!persistCustom()){dictionary=previous;return}
+ newVerb();renderDictionary();
+ $('dictionaryMessage').textContent='Sloveso „'+base+'“ bylo odstraněno ze slovníku.'+(builtin?' Lze je obnovit pomocí volby Zobrazit také odstraněná původní slovesa.':'');
+}
+function restoreAllOriginal(){
+ if(!confirm('Obnovit všech 200 původních sloves včetně výchozích překladů a tvarů? Vaše vlastní přidaná slovesa zůstanou zachována.'))return;
+ const previous={...dictionary};
+ for(const [base,v] of Object.entries(originalDictionary))dictionary[base]=JSON.parse(JSON.stringify(v));
+ if(!persistCustom()){dictionary=previous;return}
+ for(const base of Object.keys(originalDictionary))syncSelected(base);
+ newVerb();renderDictionary();$('dictionaryMessage').textContent='Původní slovník byl obnoven. Vlastní přidaná slovesa zůstala zachována.';
+}
+function editVerb(base){editingBase=base;const v=dictionary[base];$('editTitle').textContent='Upravit sloveso: '+base;[$('verbCz'),$('verbBase'),$('verbPast'),$('verbPart')].forEach((el,i)=>el.value=v.forms[i]);$('verbBase').readOnly=true;$('deleteVerb').classList.remove('hidden');$('dictionaryMessage').textContent='Základní tvar nelze u existujícího záznamu přejmenovat. Můžete upravit překlad a další tvary.';}
+function newVerb(base=''){editingBase=null;$('editTitle').textContent='Přidat nové sloveso';for(let el of [$('verbCz'),$('verbBase'),$('verbPast'),$('verbPart')])el.value='';$('verbBase').readOnly=false;$('deleteVerb').classList.add('hidden');$('verbBase').value=base;$('dictionaryMessage').textContent='';}
+function saveVerb(e){e.preventDefault();let forms=[$('verbCz').value.trim(),normalizeBase($('verbBase').value),$('verbPast').value.trim(),$('verbPart').value.trim()];if(forms.some(x=>!x)){ $('dictionaryMessage').textContent='Vyplňte všechna čtyři pole.';return}let base=forms[1];if(!/^[a-z][a-z -]*$/.test(base)){ $('dictionaryMessage').textContent='Základní tvar zadávejte anglickými písmeny.';return}if(!editingBase&&dictionary[base]){ $('dictionaryMessage').textContent='Sloveso již existuje. Vyberte Upravit.';return}let old=dictionary[base];dictionary[base]={base,forms};if(!persistCustom()){if(old)dictionary[base]=old;else delete dictionary[base];return}syncSelected(base);renderDictionary();$('dictionaryMessage').textContent='Uloženo: '+base+'.';if(entryBeforeEditor&&unknownBase===base){if(!draft.some(v=>v.base===base)&&draft.length<limit)draft.push(dictionary[base]);unknownBase='';returnTab='entry';$('dictionaryMessage').textContent='Sloveso přidáno do zadání. Stiskněte Zpět.';}editVerb(base)}
+function closeDictionary(){let dest=returnTab;resetView();$('dictionaryArea').classList.add('hidden');if(dest==='entry'){$('entry').classList.remove('hidden');$('entryNext').classList.remove('hidden');$('stopEntry').classList.remove('hidden');updateEntry();updatePanel('entry');status('Pokračujte v zadávání sloves.');}
+ else if(dest==='learn'||dest==='test'){start(dest)}else if(dest==='show'){showTable()}else{visibleTab=null;mode=null;updatePanel('idle');status('Slovník uložen. Vyberte další činnost.')}}
+function exportDictionary(){const payload={format:'nepravidelna-slovesa-dictionary',version:2,deleted:Object.keys(originalDictionary).filter(base=>!dictionary[base]),verbs:Object.values(dictionary).sort((a,b)=>a.base.localeCompare(b.base,'en')).map(v=>v.forms)};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='slovnik-nepravidelna-slovesa.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),3000)}
+async function importDictionary(e){let file=e.target.files?.[0];if(!file)return;try{if(file.size>1000000)throw Error('Soubor je příliš velký.');let data=JSON.parse(await file.text());if(data.format!=='nepravidelna-slovesa-dictionary'||!Array.isArray(data.verbs))throw Error('Neplatný formát zálohy.');let incoming={};for(let forms of data.verbs){if(!Array.isArray(forms)||forms.length!==4||forms.some(x=>typeof x!=='string'||!x.trim()))throw Error('Neplatný záznam.');let base=normalizeBase(forms[1]);if(!/^[a-z][a-z -]*$/.test(base)||incoming[base])throw Error('Duplicitní nebo neplatné sloveso.');incoming[base]={base,forms:[forms[0].trim(),base,forms[2].trim(),forms[3].trim()]}}let deleted=Array.isArray(data.deleted)?data.deleted:[];if(deleted.some(base=>typeof base!=='string'||!originalDictionary[base]||incoming[base]))throw Error('Neplatný seznam odstraněných sloves.');if(!confirm('Importovat '+Object.keys(incoming).length+' sloves'+(deleted.length?' a obnovit '+deleted.length+' odstranění':'')+'? Stejné základní tvary budou nahrazeny.'))return;let previous={...dictionary};Object.assign(dictionary,incoming);for(const base of deleted)delete dictionary[base];if(!persistCustom()){dictionary=previous;return}for(let base of Object.keys(incoming))syncSelected(base);renderDictionary();$('dictionaryMessage').textContent='Import dokončen: '+Object.keys(incoming).length+' sloves.';}catch(err){$('dictionaryMessage').textContent='Import se nezdařil: '+err.message}finally{e.target.value=''}}
+restoreCustom();updatePanel('idle');$('dictionarySearch').addEventListener('input',renderDictionary);$('verbForm').addEventListener('submit',saveVerb);$('clearVerb').onclick=()=>newVerb();$('backDictionary').onclick=closeDictionary;$('exportDictionary').onclick=exportDictionary;$('importDictionary').addEventListener('change',importDictionary);$('deleteVerb').onclick=deleteVerb;$('showDeleted').addEventListener('change',renderDictionary);$('restoreOriginal').onclick=restoreAllOriginal;$('addUnknown').onclick=()=>{let word=unknownBase;openDictionary('entry');newVerb(word)};
+
+document.addEventListener('pointerdown',unlockAudio,{passive:true});document.addEventListener('keydown',unlockAudio);$('new').onclick=beginEntry;$('manage').onclick=()=>openDictionary(visibleTab||'idle');$('entryNext').onclick=entrySubmit;$('randomPick').onclick=randomSelection;$('nextAction').onclick=()=>{unlockAudio();advance()};$('entryInput').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();entrySubmit()}});$('stopEntry').onclick=()=>{if(draft.length){$('confirm').classList.remove('hidden');$('entry').classList.add('hidden');$('entryNext').classList.add('hidden');$('stopEntry').classList.add('hidden');status('Zadávání ukončeno. Potvrďte '+draft.length+' zadaných sloves.')}else{resetView();status('Zadávání ukončeno bez sloves.')}};$('confirm').onclick=finishEntry;$('show').onclick=showTable;$('learn').onclick=()=>start('learn');$('test').onclick=()=>start('test');$('stop').onclick=stop;document.addEventListener('keydown',e=>{if(e.key==='Enter'&&mode&&visibleTab===mode&&phase!=='answer'){e.preventDefault();advance()}});
 </script><script>
-const APP_VERSION='11';
+const APP_VERSION='13';
 async function checkAppUpdate(){
  const info=document.getElementById('updateInfo');
  info.textContent='Kontroluji novou verzi…';
