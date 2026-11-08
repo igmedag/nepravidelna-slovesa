@@ -1,3 +1,4 @@
-Nepravidelná slovesa – verze 15
-Změny: dialog při tlačítku Zpět (Android, pokud prohlížeč předá událost), zachování rozpracované práce v místním úložišti, automatická výška polí, rolovací seznam slovníku.
-Poznámka: systémové ukončení či přepnutí aplikace nelze na všech telefonech zachytit. Před aktualizací doporučujeme export slovníku.
+Nepravidelná anglická slovesa – PWA verze 20
+Oprava kontroly aktualizací: sjednocení čísla verze a porovnání pouze vyšších verzí.
+Při nasazení nahrajte všechny soubory ZIP do stejného adresáře webu a nahraďte staré soubory.
+Před aktualizací doporučujeme exportovat vlastní slovník.
