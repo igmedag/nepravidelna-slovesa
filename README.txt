@@ -5,4 +5,6 @@ Před aktualizací doporučujeme exportovat vlastní slovník.
 
 Verze 23: červená tlačítka pro opuštění správy slovníku; sjednocená výška Export/Import.
 
-Verze 24: opraveno přepisování názvu horního tlačítka při vstupu do Správy slovníku.
+Verze 25: opraveno přepisování názvu horního tlačítka při vstupu do Správy slovníku.
+
+Verze 25: oprava barvy tlačítka Správa slovníku a editovatelný přehled vybraných sloves před potvrzením.
