@@ -11,4 +11,6 @@ Verze 25: oprava barvy tlačítka Správa slovníku a editovatelný přehled vyb
 
 Verze 26: sjednoceni verze, explicitni kanonicke ID manifestu (stejna identita jako drive), nova offline cache.
 
-Verze 27: Doplněno věnování Elišce T. a označení © MEDAG 2026.
+Verze 28: Doplněno věnování Elišce T. a označení © MEDAG 2026.
+
+Verze 28: Autorské označení © MEDAG 2026 se na mobilu nezalamuje.
